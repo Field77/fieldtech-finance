@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://finance.fieldtechlimited.ie/</loc>
-  </url>
-
-  <url>
-    <loc>https://finance.fieldtechlimited.ie/work-with-us.html</loc>
-  </url>
-
+  <url><loc>https://finance.fieldtechlimited.ie/</loc></url>
+  <url><loc>https://finance.fieldtechlimited.ie/work-with-us.html</loc></url>
+  <url><loc>https://finance.fieldtechlimited.ie/business-loans-ireland.html</loc></url>
+  <url><loc>https://finance.fieldtechlimited.ie/working-capital.html</loc></url>
+  <url><loc>https://finance.fieldtechlimited.ie/equipment-finance.html</loc></url>
+  <url><loc>https://finance.fieldtechlimited.ie/invoice-finance.html</loc></url>
+  <url><loc>https://finance.fieldtechlimited.ie/business-refinancing.html</loc></url>
+  <url><loc>https://finance.fieldtechlimited.ie/sme-funding.html</loc></url>
 </urlset>
