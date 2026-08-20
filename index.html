@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FieldTech Finance — Business Finance Made Simple</title>
+<meta name="description" content="FieldTech Finance — business funding and commercial finance for Irish businesses.">
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#eef6fa;font-family:Arial,Helvetica,sans-serif}body{display:flex;justify-content:center}.site{position:relative;width:min(100vw,1024px);aspect-ratio:2/3;background:#fff;overflow:hidden}.master{display:block;width:100%;height:100%;object-fit:contain}
+.hot{position:absolute;z-index:10;display:block}.home{left:31.7%;top:3.2%;width:5.1%;height:2.7%}.loans{left:37%;top:3.2%;width:6.4%;height:2.7%}.how{left:44.3%;top:3.2%;width:8.3%;height:2.7%}.why{left:53%;top:3.2%;width:6.2%;height:2.7%}.work{left:59.3%;top:3.2%;width:10.7%;height:2.7%}.about{left:70.3%;top:3.2%;width:7.2%;height:2.7%}.contact{left:77.8%;top:3.2%;width:5.6%;height:2.7%}.quoteTop{left:84.2%;top:2.75%;width:12.4%;height:3.2%}
+.emailFix,.phoneFix{position:absolute;z-index:12;top:.38%;background:#eef6fa;color:#152c40;font-size:10px;line-height:1.2;padding:3px 4px}.emailFix{right:10.1%}.phoneFix{right:1.75%}
+/* remove the unverified Google review tile while preserving the approved layout */
+.googleCover{position:absolute;z-index:8;left:81.1%;top:83.25%;width:15.2%;height:7.15%;background:linear-gradient(#fbfdfe,#f4f9fb);border-radius:11px}
+/* working form positioned exactly over the visual form */
+.realForm{position:absolute;z-index:15;left:61.35%;top:90.75%;width:34.6%;height:7.85%;background:#fff;border-radius:9px;padding:.7% 1.2%;box-shadow:0 1px 8px rgba(0,0,0,.05)}
+.realForm h3{margin:0 0 4px;text-align:center;font-size:13px;color:#102c57}.grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 7px}.grid input,.grid select{height:21px;border:1px solid #e2e8ec;border-radius:4px;padding:0 5px;font-size:8px;background:#fff;color:#32485a}.grid .full{grid-column:1/-1}.grid button{grid-column:1/-1;height:22px;border:0;border-radius:4px;background:#eb1119;color:#fff;font-size:9px;font-weight:700}.status{font-size:8px;text-align:center;color:#173a58;margin-top:2px}
+@media(max-width:700px){.emailFix,.phoneFix{font-size:7px}.realForm h3{font-size:9px}.grid input,.grid select{height:16px;font-size:6px}.grid button{height:17px;font-size:7px}}
+</style>
+</head>
+<body>
+<div class="site">
+  <img class="master" src="assets/master.png" alt="FieldTech Finance homepage">
+  <div class="emailFix">info@fieldtechlimited.ie</div>
+  <div class="phoneFix">053 900 50 20</div>
+  <div class="googleCover" aria-hidden="true"></div>
+
+  <a class="hot home" href="index.html" aria-label="Home"></a>
+  <a class="hot loans" href="#loans" aria-label="Loans"></a>
+  <a class="hot how" href="#how" aria-label="How It Works"></a>
+  <a class="hot why" href="#why" aria-label="Why Us"></a>
+  <a class="hot work" href="work-with-us.html" aria-label="Work With Us"></a>
+  <a class="hot about" href="#about" aria-label="About Us"></a>
+  <a class="hot contact" href="#contact" aria-label="Contact"></a>
+  <a class="hot quoteTop" href="#contact" aria-label="Get Free Quote"></a>
+
+  <form class="realForm" id="quoteForm">
+    <h3>Get Your Free Quote</h3>
+    <div class="grid">
+      <input name="name" placeholder="Full Name*" required>
+      <input name="company" placeholder="Business Name*" required>
+      <input type="email" name="email" placeholder="Email Address*" required>
+      <input name="phone" placeholder="Phone Number*" required>
+      <select class="full" name="best_time_to_call" aria-label="Best time to call you">
+        <option>Any</option><option>9am-10am</option><option>10am-11am</option><option>11am-12pm</option><option>12pm-1pm</option><option>1pm-2pm</option><option>2pm-3pm</option><option>3pm-4pm</option><option>4pm-5pm</option><option>5pm-6pm</option>
+      </select>
+      <button type="submit">Get Free Quote →</button>
+    </div>
+    <div class="status" id="status"></div>
+  </form>
+
+  <span id="loans" style="position:absolute;top:33.4%"></span>
+  <span id="why" style="position:absolute;top:60.6%"></span>
+  <span id="how" style="position:absolute;top:80.8%"></span>
+  <span id="about" style="position:absolute;top:80.8%"></span>
+  <span id="contact" style="position:absolute;top:90.2%"></span>
+</div>
+<script>
+const WEB3FORMS_KEY="YOUR_WEB3FORMS_ACCESS_KEY";
+document.getElementById('quoteForm').addEventListener('submit',async e=>{
+ e.preventDefault(); const s=document.getElementById('status');
+ if(WEB3FORMS_KEY==='YOUR_WEB3FORMS_ACCESS_KEY'){s.textContent='Connect Web3Forms key before launch.';return;}
+ const d=new FormData(e.target);d.append('access_key',WEB3FORMS_KEY);d.append('subject','FieldTech Finance — Finance Enquiry');d.append('from_name','FieldTech Finance Website');
+ s.textContent='Sending…';
+ try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:d});const j=await r.json();if(j.success){s.textContent='Thank you — your enquiry has been sent.';e.target.reset()}else{s.textContent='Please call 053 900 50 20.'}}catch(err){s.textContent='Please call 053 900 50 20.'}
+});
+</script>
+</body></html>
